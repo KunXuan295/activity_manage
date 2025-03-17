@@ -1,0 +1,32 @@
+{% extends "events/home.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mt-4">Welcome, {{ user.username }}!</h2>
+    <p class="lead">This is your Admin Dashboard.</p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-purple-light text-black">Admin Functions</div>
+                <div class="card-body">
+                    <!-- Manage Events: Click on it to go to the admin_event_list page. -->
+                    <a href="{% url 'admin_event_list' %}" class="btn btn-custom-primary w-100 mb-2">Manage Events</a>
+
+                    <!-- Approve Registrations: Get the latest events and jump -->
+                    {% if latest_event %}
+                        <a href="{% url 'admin_event_details' latest_event.id %}" class="btn btn-custom-secondary w-100 mb-2">Approve Registrations</a>
+                    {% else %}
+                        <p>No events available to approve.</p>
+                    {% endif %}
+
+                    <!-- Logout: Click to jump to the exit page -->
+                    <a href="{% url 'logout' %}" class="btn btn-custom-danger w-100">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

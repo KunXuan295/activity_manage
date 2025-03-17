@@ -1,0 +1,141 @@
+/* Custom purple color scheme */
+:root {
+    --purple-light: #9b59b6; /* Light purple */
+    --purple-medium: #8e44ad; /* Medium purple */
+    --purple-dark: #6c3483; /* Dark purple */
+    --purple-darker: #5b2c6f; /* Darker purple */
+    --purple-very-light: #f5e6ff; /* Very light purple for activity info */
+    --purple-navbar: #d8a9f3; /* Original navbar color */
+}
+
+/* General body font size */
+body {
+    font-size: 1.1rem;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--purple-navbar); /* Original navbar color */
+    padding: 1.25rem 1rem; /* Slightly increased padding for better navbar height */
+}
+
+.navbar-brand {
+    color: white; /* White color for navbar brand */
+    font-size: 1.75rem; /* Slightly larger brand font */
+}
+
+.navbar-brand:hover {
+    color: black; /* Black color on hover for navbar brand */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* White color for nav links */
+    font-size: 1.2rem; /* Slightly larger font for nav links */
+    padding: 0.75rem 1rem; /* Adjusted padding for better spacing */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar-nav .nav-link:hover {
+    color: black; /* Black color on hover for nav links */
+    background-color: var(--purple-medium); /* Medium purple on hover */
+}
+
+/* Custom button styles */
+.btn-custom-primary,
+.btn-custom-secondary,
+.btn-custom-danger {
+    background-color: var(--purple-light); /* Light purple */
+    color: white;
+    border: none;
+    font-size: 1.3rem; /* Increased font size */
+    padding: 10px 20px; /* Adjusted padding */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-custom-primary:hover,
+.btn-custom-secondary:hover,
+.btn-custom-danger:hover {
+    background-color: var(--purple-medium); /* Medium purple on hover */
+    transform: scale(1.05); /* Slightly enlarge */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Event Info Section Styling */
+.event-info {
+    background-color: var(--purple-very-light); /* Very light purple background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 10px 15px; /* Reduced padding */
+    margin-bottom: 20px; /* Margin at the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Reduced space between items */
+}
+
+.event-info p {
+    margin: 0; /* Remove default margin */
+    color: var(--purple-dark); /* Dark purple text */
+    font-size: 1rem; /* Smaller font size */
+}
+
+/* Location and Description Section Styling */
+.location-description {
+    margin-bottom: 20px; /* Margin at the bottom */
+}
+
+.location-description p {
+    margin: 0 0 10px 0; /* Margin for paragraphs */
+    color: var(--purple-dark); /* Dark purple text */
+}
+
+.location-description .description-box {
+    border: 1px solid var(--purple-light); /* Light purple border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the box */
+    background-color: white; /* White background */
+}
+
+/* Comment Card Styling */
+.card-comment {
+    border-radius: 12px; /* Increased corner radius for a softer look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    transition: box-shadow 0.3s ease;
+    background-color: white; /* White background */
+    border: 1px solid var(--purple-medium); /* Medium purple border */
+}
+
+.card-comment:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-comment .card-body {
+    padding: 20px;
+}
+
+.card-comment .card-title {
+    color: var(--purple-medium); /* Medium purple title */
+}
+
+.card-comment .card-text {
+    color: var(--purple-dark); /* Dark purple text */
+}
+
+/* Text styling */
+h2 {
+    font-size: 3rem; /* Increased title font size */
+    font-weight: bold;
+    color: var(--purple-medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lead {
+    font-size: 1.5rem; /* Increased font size */
+    margin-bottom: 35px;
+    color: var(--purple-dark);
+}

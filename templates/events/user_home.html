@@ -1,0 +1,26 @@
+{% extends "events/home.html" %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mt-4">Welcome, {{ user.username }}!</h2>
+    <p class="lead">This is your user dashboard.</p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-purple text-black">User Functions</div>
+                <div class="card-body">
+                    <!-- Link to the events list page -->
+                    <a href="{% url 'events_list' %}" class="btn btn-custom-primary w-100 mb-3">Events List</a>
+                    <!-- Link to the my_participations page -->
+                    <a href="{% url 'my_participations' %}" class="btn btn-custom-secondary w-100 mb-3">My Participation</a>
+                    <a href="{% url 'logout' %}" class="btn btn-custom-danger w-100">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

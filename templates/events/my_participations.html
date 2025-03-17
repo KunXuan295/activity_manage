@@ -1,0 +1,41 @@
+{% extends "events/home.html" %}
+{% block title %}My Participations{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>My Participations</h2>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>#</th> <!-- Sequence number column -->
+                <th>Event Name</th>
+                <th>Organizer</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Joined At</th>
+                <th>Details</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for participation in participations %}
+                <tr>
+                    <td>{{ forloop.counter }}</td> <!-- Display serial number -->
+                    <td>{{ participation.event.title }}</td>
+                    <td>{{ participation.event.organizer.username }}</td>
+                    <td>{{ participation.event.start_time|date:"d/m/y H:i" }}</td>
+                    <td>{{ participation.event.end_time|date:"d/m/y H:i" }}</td>
+                    <td>{{ participation.joined_at|date:"d/m/y H:i" }}</td>
+                    <td>
+                        <!-- Add a Details button -->
+                        <a href="{% url 'event_details' participation.event.id %}" class="btn btn-purple">Details</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center">You have not joined any events yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

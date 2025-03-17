@@ -1,0 +1,47 @@
+{% extends "events/home.html" %}
+{% block title %}Add Event{% endblock %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2>Add Event</h2>
+        <form id="add-event-form" method="post" action="{% url 'add_event' %}">
+            {% csrf_token %}
+            <!-- single column layout -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Event Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="start_time" class="form-label">Start Time</label>
+                <input type="datetime-local" class="form-control" id="start_time" name="start_time" required>
+            </div>
+            <div class="mb-3">
+                <label for="end_time" class="form-label">End Time</label>
+                <input type="datetime-local" class="form-control" id="end_time" name="end_time" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" required>
+            </div>
+            <div class="mb-3">
+                <label for="max_participants" class="form-label">Max Participants (Optional)</label>
+                <input type="number" class="form-control" id="max_participants" name="max_participants">
+            </div>
+            <!-- Submit and Cancel buttons -->
+            <div class="d-flex justify-content-end mt-4">
+                <a href="{% url 'events_list' %}" class="btn btn-secondary me-2">Cancel</a>
+                <button type="submit" class="btn btn-custom-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pass the URL of events_list to JavaScript -->
+    <script>
+        const eventsListUrl = "{% url 'events_list' %}";
+    </script>
+    
+{% endblock %}
